@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>高校入試 計算ドリル</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+  <h1>高校入試 計算ドリル</h1>
+
+  <label for="unit-select">出題単元を選ぶ：</label>
+  <select id="unit-select">
+    <option value="展開">展開</option>
+    <option value="因数分解">因数分解</option>
+    <option value="平方根">平方根</option>
+  </select>
+
+  <div id="problem-area" class="math">ここに問題が表示されます</div>
+
+  <input type="text" id="answer-input" placeholder="答えを入力" />
+
+  <div>
+    <button id="check-button">答え合わせ</button>
+    <button id="next-button" disabled>つぎのもんだい</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
