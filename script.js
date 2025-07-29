@@ -43,6 +43,30 @@ function showRandomProblem() {
   nextButton.classList.remove("ready");
 }
 
+// 入力パッドのボタンに記号を挿入する処理
+document.querySelectorAll(".insert-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const char = btn.textContent;
+    insertAtCursor(answerInput, char);
+  });
+});
+
+document.getElementById("clear-button").addEventListener("click", () => {
+  answerInput.value = "";
+  answerInput.focus();
+});
+
+// カーソル位置に文字を挿入する関数
+function insertAtCursor(input, text) {
+  const start = input.selectionStart;
+  const end = input.selectionEnd;
+  const current = input.value;
+  input.value = current.substring(0, start) + text + current.substring(end);
+  input.selectionStart = input.selectionEnd = start + text.length;
+  input.focus();
+}
+
+
 checkButton.addEventListener("click", () => {
   const userAnswer = answerInput.value.trim();
   const correct = currentProblem.答え.trim();
