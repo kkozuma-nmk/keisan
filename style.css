@@ -73,3 +73,65 @@ button:disabled {
 .math {
   font-family: "KaTeX_Main", "Times New Roman", serif;
 }
+
+#button-pad {
+  margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  max-width: 360px;
+}
+
+.insert-btn {
+  padding: 6px 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.insert-btn:hover {
+  background-color: #ccc;
+}
+
+#clear-button {
+  background-color: #f44336;
+  color: white;
+}
+
+#button-pad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  max-width: 320px;
+  margin: 10px auto;
+}
+
+.insert-btn {
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  background-color: #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.insert-btn:hover {
+  background-color: #ccc;
+}
+
+#clear-button {
+  grid-column: span 4;
+  background-color: #f44336;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.wide-btn {
+  grid-column: span 4;
+}
